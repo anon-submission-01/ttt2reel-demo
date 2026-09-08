@@ -465,8 +465,30 @@ a {
 
 .result-table tr.ours td {
     color: var(--accent-strong);
-    font-weight: 700;
     background: var(--accent-soft);
+}
+
+.result-table tr.ours td:first-child {
+    font-weight: 700;
+}
+
+/* Paper convention: best per column in bold, second-best underlined. */
+.result-table .best {
+    font-weight: 700;
+}
+
+.result-table .second {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.result-table th {
+    white-space: nowrap;
+}
+
+.result-table caption .second {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .result-grid {
