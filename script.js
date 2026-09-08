@@ -35,16 +35,3 @@ document.querySelectorAll('.speed-controls').forEach(function (group) {
         });
     });
 });
-
-// Copy-to-clipboard for the BibTeX entry.
-function copyBibtex(button) {
-    var box = document.getElementById('bibtex-box');
-    if (!box) return;
-    navigator.clipboard.writeText(box.textContent).then(function () {
-        var original = button.innerHTML;
-        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        setTimeout(function () {
-            button.innerHTML = original;
-        }, 1600);
-    });
-}
