@@ -93,31 +93,31 @@
             <div class="columns">
                 <div class="item">
                     <span class="item-icon"><i class="fas fa-memory"></i></span>
-                    <h3>Long video is a memory problem</h3>
-                    <p>A three-minute 720p clip already exceeds a million latent tokens — far beyond what a
-                    single denoising pass can practically attend over. The question is not only how to bound
-                    the cost of generation, but <em>how to remember</em> what no longer fits in context.</p>
+                    <h3>Long-video generation is a memory problem</h3>
+                    <p>A three-minute 720p clip at 24 FPS contains more than a million latent tokens, making it
+                    impractical for a single denoising pass to attend to the entire sequence. Generating coherent
+                    long videos therefore requires a way to retain history beyond a finite context window.</p>
                 </div>
                 <div class="item">
                     <span class="item-icon"><i class="fas fa-compress-alt"></i></span>
-                    <h3>Existing memories are capacity-bounded</h3>
-                    <p>Prior work keeps the past in <em>input space</em> (re-injected frames or latents) or in
-                    <em>feature space</em> (cached key–value activations). Both preserve only what survives
-                    compression into a few frames or a fixed cache.</p>
+                    <h3>Existing memory representations are capacity-bounded</h3>
+                    <p>Prior work stores the past in input space through re-injected frames or latents,
+                    or in feature space through cached features. Both preserve only the information that
+                    survives compression into a few frames or a fixed-size cache.</p>
                 </div>
                 <div class="item">
                     <span class="item-icon"><i class="fas fa-random"></i></span>
-                    <h3>Train–test mismatch causes drift</h3>
-                    <p>Models are trained to predict each chunk from clean ground-truth context, but at inference
-                    they condition on their own imperfect outputs. The distribution shift compounds across chunks:
-                    subjects change appearance, backgrounds mutate, and early events are forgotten.</p>
+                    <h3>Autoregressive rollouts amplify errors</h3>
+                    <p>Models trained with clean, ground-truth context must condition on their own imperfect
+                    outputs at inference. This train–test mismatch compounds across chunks, causing appearance
+                    drift, background changes, motion discontinuities, and forgotten events.</p>
                 </div>
                 <div class="item">
                     <span class="item-icon"><i class="fas fa-sync-alt"></i></span>
-                    <h3>Our answer: train the loop you deploy</h3>
-                    <p>TTT2Reel places chunk-level memory in the model's <em>own weights</em> — and makes the
-                    memorize-then-predict loop executed at test time itself the object of training, so the
-                    procedure learned during training is exactly the procedure deployed at inference.</p>
+                    <h3>Our answer: learn to memorize in parameter space</h3>
+                    <p>TTT2Reel actively memorizes the preceding chunk and preserves information useful for next-chunk prediction in lightweight LoRA parameters. The resulting memory carries
+                    history across chunks without expanding the input context or cache, while error replay improves
+                    robustness to self-generated context.</p>
                 </div>
             </div>
         </section>
