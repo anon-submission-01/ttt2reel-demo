@@ -44,17 +44,21 @@
             <p class="venue-note">Under review as a conference paper at ICLR 2027</p>
 
             <p class="hero-abstract">
-                Generating long, coherent videos from text is fundamentally a <strong>memory problem</strong>:
-                a model must retain far more visual context than it can affordably keep in its context window.
-                <strong>TTT2Reel</strong> generates long videos chunk by chunk and carries the past in
-                <strong>parameter space</strong>: before predicting each chunk, the model writes the preceding
-                chunk into lightweight LoRA modules via a few gradient updates on a velocity-prediction diffusion
-                objective, making the LoRA weights an expressive parametric memory of past visual context.
-                The pipeline is trained end-to-end as a <strong>bi-level optimization</strong> whose inner loop
-                mirrors this test-time memorization, while the outer loop minimizes the next-chunk prediction loss
-                summed over the entire video. To withstand compounding self-generated errors, <strong>error-replay
-                training</strong> harvests the model's own errors online and replays them into both the memorization
-                and prediction steps.
+                Generating long, coherent videos from text is fundamentally a <strong>memory problem</strong>
+                because long-range coherence depends on more visual context than a model can affordably accommodate
+                within its context window. Existing methods store past visual context as re-injected frames or
+                latents, or as cached features, but both representations have limited capacity. We present
+                <strong>TTT2Reel</strong>, an end-to-end test-time training framework for chunk-wise autoregressive
+                long video generation. Before generating the next chunk, the model actively memorizes the preceding
+                chunk and preserves information useful for next-chunk prediction in lightweight LoRA modules, which
+                serve as a <strong>parametric memory</strong> of prior visual context. The pipeline is trained end to
+                end using <strong>bi-level optimization</strong>, where the inner loop mirrors the test-time
+                memory-encoding process and the outer loop minimizes the sum of next-chunk prediction losses across
+                the entire video. To withstand compounding errors in self-generated context at inference, we adapt
+                <strong>error-replay training</strong> to our bi-level setting by estimating model-dependent
+                residuals online and replaying them into both the memorization and prediction steps. Experiments on
+                minute-long video generation show that TTT2Reel achieves the best overall balance across diverse
+                evaluation dimensions, producing highly dynamic videos while preserving strong visual consistency.
             </p>
 
             <div class="intro-video-wrap">
