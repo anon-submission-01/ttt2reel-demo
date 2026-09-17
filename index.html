@@ -179,34 +179,34 @@
 
                 <div>
                     <h3 class="demo-group-title">Same Prompt, Four Rollout Strategies</h3>
-                    <p class="demo-group-note">One-minute rollouts on the same backbone: only the memory mechanism differs.</p>
+                    <p class="demo-group-note">One-minute text-to-videorollouts on the same backbone (Wan2.2-TI2V-5B): only the memory mechanism differs.</p>
                 </div>
                 <div class="demo-grid four-col">
                     <article class="demo-card">
-                        <h3>One-pass generation</h3>
+                        <h3>Full-sequence generation</h3>
                         <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+                            <source src="./assets/videos/5b_t2v_full_cleaning_table.mp4" type="video/mp4">
                         </video>
                         <p>Fails to extrapolate beyond the trained denoising horizon.</p>
                     </article>
                     <article class="demo-card">
-                        <h3>Chunk-by-chunk</h3>
+                        <h3>Chunk-wise autoregressive generation</h3>
                         <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+                            <source src="./assets/videos/5b_t2v_chunkwise_cleaning_table.mp4" type="video/mp4">
                         </video>
                         <p>No memory beyond the previous chunk's last frame; drifts quickly.</p>
                     </article>
                     <article class="demo-card">
                         <h3>Chunk-by-chunk + anchored memory</h3>
                         <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+                            <source src="./assets/videos/5b_t2v_chunkwise_anchor_cleaning_table.mp4" type="video/mp4">
                         </video>
                         <p>A persistent anchor frame helps, but the memory stays capacity-bounded.</p>
                     </article>
                     <article class="demo-card">
                         <h3 class="accent-heading">TTT2Reel (ours)</h3>
                         <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+                            <source src="./assets/videos/5b_t2v_ttt2reel_cleaning_table.mp4" type="video/mp4">
                         </video>
                         <p>Parametric LoRA memory, trained end-to-end with error replay.</p>
                     </article>
