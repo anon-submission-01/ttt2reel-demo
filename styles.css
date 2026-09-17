@@ -172,6 +172,10 @@ a {
     color: var(--accent);
 }
 
+.paper-info h1 .title-second-line {
+    white-space: nowrap;
+}
+
 .authors,
 .affiliations {
     max-width: 920px;
@@ -205,7 +209,7 @@ a {
 
 .hero-abstract {
     max-width: 880px;
-    margin: 0 auto 22px;
+    margin: 28px auto 22px;
     color: #3a4450;
     font-size: 1.0rem;
     text-align: left;
