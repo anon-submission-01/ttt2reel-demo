@@ -179,7 +179,7 @@
 
                 <div>
                     <h3 class="demo-group-title">Same Prompt, Four Rollout Strategies</h3>
-                    <p class="demo-group-note">One-minute text-to-videorollouts on the same backbone (Wan2.2-TI2V-5B): only the memory mechanism differs.</p>
+                    <p class="demo-group-note">One-minute text-to-video rollouts on the same backbone (Wan2.2-TI2V-5B): only the memory mechanism differs.</p>
                 </div>
                 <div class="demo-grid four-col">
                     <article class="demo-card">
@@ -207,6 +207,34 @@
                         <h3 class="accent-heading">TTT2Reel (ours)</h3>
                         <video class="gallery-video" loop muted autoplay playsinline controls>
                             <source src="./assets/videos/5b_t2v_ttt2reel_cleaning_table.mp4" type="video/mp4">
+                        </video>
+                        <p>Parametric LoRA memory, trained end-to-end with error replay.</p>
+                    </article>
+                    <article class="demo-card">
+                        <h3>Full-sequence</h3>
+                        <video class="gallery-video" loop muted autoplay playsinline controls>
+                            <source src="./assets/videos/5b_t2v_full_skiing_rabbit.mp4" type="video/mp4">
+                        </video>
+                        <p>Fails to extrapolate beyond the trained denoising horizon.</p>
+                    </article>
+                    <article class="demo-card">
+                        <h3>Chunk-wise AR</h3>
+                        <video class="gallery-video" loop muted autoplay playsinline controls>
+                            <source src="./assets/videos/5b_t2v_chunkwise_skiing_rabbit.mp4" type="video/mp4">
+                        </video>
+                        <p>No memory beyond the previous chunk's last frame; drifts quickly.</p>
+                    </article>
+                    <article class="demo-card">
+                        <h3>Chunk-wise AR with input/feature memory</h3>
+                        <video class="gallery-video" loop muted autoplay playsinline controls>
+                            <source src="./assets/videos/5b_t2v_chunkwise_anchor_skiing_rabbit.mp4" type="video/mp4">
+                        </video>
+                        <p>A persistent anchor frame helps, but the memory stays capacity-bounded.</p>
+                    </article>
+                    <article class="demo-card">
+                        <h3 class="accent-heading">TTT2Reel (ours)</h3>
+                        <video class="gallery-video" loop muted autoplay playsinline controls>
+                            <source src="./assets/videos/5b_t2v_ttt2reel_skiing_rabbit.mp4" type="video/mp4">
                         </video>
                         <p>Parametric LoRA memory, trained end-to-end with error replay.</p>
                     </article>
