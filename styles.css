@@ -508,6 +508,13 @@ a {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.prompt-grid .demo-card {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+}
+
 .speed-controls {
     display: flex;
     align-items: center;
@@ -602,5 +609,10 @@ a {
     .hero-video-compare,
     .story {
         grid-template-columns: 1fr;
+    }
+
+    .prompt-grid .demo-card {
+        grid-row: auto;
+        grid-template-rows: auto;
     }
 }
