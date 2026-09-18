@@ -181,19 +181,19 @@
                     <h3 class="demo-group-title">Comparison with State-of-the-Art Systems</h3>
                     <p class="demo-group-note">Each row compares all systems using the same prompt.</p>
                 </div>
-                <div class="sota-comparison-list">
-                    <div class="sota-method-header" aria-hidden="true">
+                <div class="comparison-matrix">
+                    <div class="comparison-method-header" aria-hidden="true">
                         <span>MAGI-1 (4.5B)</span>
                         <span>SkyReels-V2 (14B)</span>
                         <span>Helios (14B)</span>
                         <span class="accent-heading">TTT2Reel (ours, 14B)</span>
                     </div>
-                    <section class="sota-comparison-row">
-                        <div class="sota-shared-prompt">
-                            <span class="sota-prompt-label">Prompt 01</span>
+                    <section class="comparison-row">
+                        <div class="comparison-shared-prompt">
+                            <span class="comparison-prompt-label">Prompt 01</span>
                             <p>A wide, locked-off night shot of a large fireworks display over a distant city skyline. Golden and crimson chrysanthemum shells burst high in the deep indigo sky, one after another, their sparks arcing outward and then drifting down in long glittering trails that fade [...].</p>
                         </div>
-                        <div class="demo-grid four-col sota-video-grid">
+                        <div class="demo-grid four-col comparison-video-grid">
                             <article class="demo-card">
                                 <h3>MAGI-1 (4.5B)</h3>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
@@ -220,12 +220,12 @@
                             </article>
                         </div>
                     </section>
-                    <section class="sota-comparison-row">
-                        <div class="sota-shared-prompt">
-                            <span class="sota-prompt-label">Prompt 02</span>
+                    <section class="comparison-row">
+                        <div class="comparison-shared-prompt">
+                            <span class="comparison-prompt-label">Prompt 02</span>
                             <p>A fire-breathing dragon advances down a rainy night street. Its scaled body glows from within like molten lava, a red ridge running the length of its neck, jaws open on rows of pale teeth, one yellow slit eye fixed ahead. [...]</p>
                         </div>
-                        <div class="demo-grid four-col sota-video-grid">
+                        <div class="demo-grid four-col comparison-video-grid">
                             <article class="demo-card">
                                 <h3>MAGI-1 (4.5B)</h3>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
@@ -252,12 +252,12 @@
                             </article>
                         </div>
                     </section>
-                    <section class="sota-comparison-row">
-                        <div class="sota-shared-prompt">
-                            <span class="sota-prompt-label">Prompt 03</span>
+                    <section class="comparison-row">
+                        <div class="comparison-shared-prompt">
+                            <span class="comparison-prompt-label">Prompt 03</span>
                             <p>Timelapse of the aurora borealis over a snowfield at night. Green curtains of light ripple and fold across a deep blue, star-filled sky, brightening and fading as they sweep overhead, their lower edges fringed with violet, thin clouds drifting beneath them. [...]</p>
                         </div>
-                        <div class="demo-grid four-col sota-video-grid">
+                        <div class="demo-grid four-col comparison-video-grid">
                             <article class="demo-card">
                                 <h3>MAGI-1 (4.5B)</h3>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
@@ -290,63 +290,81 @@
                     <h3 class="demo-group-title">Same Prompt, Four Rollout Strategies</h3>
                     <p class="demo-group-note">One-minute text-to-video rollouts on the same backbone (Wan2.2-TI2V-5B): only the memory mechanism differs.</p>
                 </div>
-                <div class="demo-grid four-col">
-                    <article class="demo-card">
-                        <h3>Full-sequence</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_full_cleaning_table.mp4" type="video/mp4">
-                        </video>
-                        <p>Fails to extrapolate beyond the trained denoising horizon.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3>Chunk-wise AR</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_chunkwise_cleaning_table.mp4" type="video/mp4">
-                        </video>
-                        <p>No memory beyond the previous chunk's last frame; drifts quickly.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3>Chunk-wise AR with input/feature memory</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_chunkwise_anchor_cleaning_table.mp4" type="video/mp4">
-                        </video>
-                        <p>A persistent anchor frame helps, but the memory stays capacity-bounded.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3 class="accent-heading">TTT2Reel (ours)</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_ttt2reel_cleaning_table.mp4" type="video/mp4">
-                        </video>
-                        <p>Parametric LoRA memory, trained end-to-end with error replay.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3>Full-sequence</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_full_skiing_rabbit.mp4" type="video/mp4">
-                        </video>
-                        <p>Fails to extrapolate beyond the trained denoising horizon.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3>Chunk-wise AR</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_chunkwise_skiing_rabbit.mp4" type="video/mp4">
-                        </video>
-                        <p>No memory beyond the previous chunk's last frame; drifts quickly.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3>Chunk-wise AR with input/feature memory</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_chunkwise_anchor_skiing_rabbit.mp4" type="video/mp4">
-                        </video>
-                        <p>A persistent anchor frame helps, but the memory stays capacity-bounded.</p>
-                    </article>
-                    <article class="demo-card">
-                        <h3 class="accent-heading">TTT2Reel (ours)</h3>
-                        <video class="gallery-video" loop muted autoplay playsinline controls>
-                            <source src="./assets/videos/5b_t2v_ttt2reel_skiing_rabbit.mp4" type="video/mp4">
-                        </video>
-                        <p>Parametric LoRA memory, trained end-to-end with error replay.</p>
-                    </article>
+                <figure class="figure">
+                    <img src="./assets/images/memory-system.png" alt="Memory coverage of full-sequence generation, chunk-wise autoregressive generation, input or feature memory, and TTT2Reel parametric memory">
+                    <figcaption>Memory coverage of the four rollout strategies compared below.</figcaption>
+                </figure>
+                <div class="comparison-matrix">
+                    <div class="comparison-method-header" aria-hidden="true">
+                        <span>Full-sequence</span>
+                        <span>Chunk-wise AR</span>
+                        <span>Chunk-wise AR + input/feature memory</span>
+                        <span class="accent-heading">TTT2Reel (ours)</span>
+                    </div>
+                    <section class="comparison-row">
+                        <div class="comparison-shared-prompt">
+                            <span class="comparison-prompt-label">Prompt 01</span>
+                            <p>A detailed realist photograph captures a middle-aged man methodically wiping down a kitchen counter with a clean, white cloth. His focused expression conveys determination as he ensures every surface is spotlessly clean. He stands upright, leaning slightly forward, with one hand gripping the edge of the counter and the other holding the cloth. The background features …… A medium shot from a slightly elevated angle, highlighting the man's dedication and the pristine cleanliness of the kitchen.</p>
+                        </div>
+                        <div class="demo-grid four-col comparison-video-grid">
+                            <article class="demo-card">
+                                <h3>Full-sequence</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_full_cleaning_table.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                            <article class="demo-card">
+                                <h3>Chunk-wise AR</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_chunkwise_cleaning_table.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                            <article class="demo-card">
+                                <h3>Chunk-wise AR + input/feature memory</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_chunkwise_anchor_cleaning_table.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                            <article class="demo-card">
+                                <h3 class="accent-heading">TTT2Reel (ours)</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_ttt2reel_cleaning_table.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                        </div>
+                    </section>
+                    <section class="comparison-row">
+                        <div class="comparison-shared-prompt">
+                            <span class="comparison-prompt-label">Prompt 02</span>
+                            <p>A fluffy little rabbit wearing ski goggles competes in a skiing race at a ski resort. It stands on tiny skis and glides quickly down the snowy slope, its ears fluttering in the wind. The camera follows it from a low angle, with snowflakes splashing up around it. In the distance, there is a blue sky and snow-covered mountains, creating a scene that is both adorable and full of speed.</p>
+                        </div>
+                        <div class="demo-grid four-col comparison-video-grid">
+                            <article class="demo-card">
+                                <h3>Full-sequence</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_full_skiing_rabbit.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                            <article class="demo-card">
+                                <h3>Chunk-wise AR</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_chunkwise_skiing_rabbit.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                            <article class="demo-card">
+                                <h3>Chunk-wise AR + input/feature memory</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_chunkwise_anchor_skiing_rabbit.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                            <article class="demo-card">
+                                <h3 class="accent-heading">TTT2Reel (ours)</h3>
+                                <video class="gallery-video" loop muted autoplay playsinline controls>
+                                    <source src="./assets/videos/5b_t2v_ttt2reel_skiing_rabbit.mp4" type="video/mp4">
+                                </video>
+                            </article>
+                        </div>
+                    </section>
                 </div>
 
                 <div>
