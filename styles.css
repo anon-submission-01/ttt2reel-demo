@@ -508,6 +508,74 @@ a {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.sota-comparison-list,
+.sota-comparison-row {
+    display: grid;
+}
+
+.sota-comparison-list {
+    gap: 14px;
+}
+
+.sota-method-header {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0 14px;
+}
+
+.sota-method-header span {
+    color: #10151d;
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.sota-method-header .accent-heading {
+    color: var(--accent);
+}
+
+.sota-comparison-row {
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #faf9f7;
+}
+
+.sota-shared-prompt {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--accent);
+    border-radius: 7px;
+    background: #ffffff;
+}
+
+.sota-shared-prompt p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.sota-prompt-label {
+    color: var(--accent-strong);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.sota-video-grid .demo-card h3 {
+    display: none;
+}
+
+.sota-video-grid .demo-card {
+    border-radius: 8px;
+}
+
 .prompt-grid .demo-card {
     display: grid;
     grid-row: span 2;
@@ -614,5 +682,23 @@ a {
     .prompt-grid .demo-card {
         grid-row: auto;
         grid-template-rows: auto;
+    }
+
+    .sota-shared-prompt {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .sota-method-header {
+        display: none;
+    }
+
+    .sota-comparison-row {
+        padding: 10px;
+    }
+
+    .sota-video-grid .demo-card h3 {
+        display: block;
+        min-height: 0;
     }
 }
