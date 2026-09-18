@@ -296,22 +296,14 @@
                 </figure>
                 <div class="comparison-matrix">
                     <div class="comparison-method-header strategy-method-header">
-                        <div class="strategy-header-item">
-                            <span>Full-sequence</span>
-                            <small>Fails to extrapolate beyond the trained denoising horizon.</small>
-                        </div>
-                        <div class="strategy-header-item">
-                            <span>Chunk-wise AR</span>
-                            <small>No memory beyond the previous chunk's last frame; drifts quickly.</small>
-                        </div>
-                        <div class="strategy-header-item">
-                            <span>Chunk-wise AR + input/feature memory</span>
-                            <small>A persistent anchor frame helps, but the memory stays capacity-bounded.</small>
-                        </div>
-                        <div class="strategy-header-item">
-                            <span class="accent-heading">TTT2Reel (ours)</span>
-                            <small>Parametric LoRA memory, trained end-to-end with error replay.</small>
-                        </div>
+                        <span>Full-sequence</span>
+                        <span>Chunk-wise AR</span>
+                        <span>Chunk-wise AR + input/feature memory</span>
+                        <span class="accent-heading">TTT2Reel (ours)</span>
+                        <small>Fails to extrapolate beyond the trained denoising horizon.</small>
+                        <small>No memory beyond the previous chunk's last frame; drifts quickly.</small>
+                        <small>A persistent anchor frame helps, but the memory stays capacity-bounded.</small>
+                        <small>Parametric LoRA memory, trained end-to-end with error replay.</small>
                     </div>
                     <section class="comparison-row">
                         <div class="comparison-shared-prompt">
@@ -321,28 +313,24 @@
                         <div class="demo-grid four-col comparison-video-grid">
                             <article class="demo-card">
                                 <h3>Full-sequence</h3>
-                                <p class="strategy-summary">Fails to extrapolate beyond the trained denoising horizon.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_full_cleaning_table.mp4" type="video/mp4">
                                 </video>
                             </article>
                             <article class="demo-card">
                                 <h3>Chunk-wise AR</h3>
-                                <p class="strategy-summary">No memory beyond the previous chunk's last frame; drifts quickly.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_chunkwise_cleaning_table.mp4" type="video/mp4">
                                 </video>
                             </article>
                             <article class="demo-card">
                                 <h3>Chunk-wise AR + input/feature memory</h3>
-                                <p class="strategy-summary">A persistent anchor frame helps, but the memory stays capacity-bounded.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_chunkwise_anchor_cleaning_table.mp4" type="video/mp4">
                                 </video>
                             </article>
                             <article class="demo-card">
                                 <h3 class="accent-heading">TTT2Reel (ours)</h3>
-                                <p class="strategy-summary">Parametric LoRA memory, trained end-to-end with error replay.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_ttt2reel_cleaning_table.mp4" type="video/mp4">
                                 </video>
@@ -357,28 +345,24 @@
                         <div class="demo-grid four-col comparison-video-grid">
                             <article class="demo-card">
                                 <h3>Full-sequence</h3>
-                                <p class="strategy-summary">Fails to extrapolate beyond the trained denoising horizon.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_full_skiing_rabbit.mp4" type="video/mp4">
                                 </video>
                             </article>
                             <article class="demo-card">
                                 <h3>Chunk-wise AR</h3>
-                                <p class="strategy-summary">No memory beyond the previous chunk's last frame; drifts quickly.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_chunkwise_skiing_rabbit.mp4" type="video/mp4">
                                 </video>
                             </article>
                             <article class="demo-card">
                                 <h3>Chunk-wise AR + input/feature memory</h3>
-                                <p class="strategy-summary">A persistent anchor frame helps, but the memory stays capacity-bounded.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_chunkwise_anchor_skiing_rabbit.mp4" type="video/mp4">
                                 </video>
                             </article>
                             <article class="demo-card">
                                 <h3 class="accent-heading">TTT2Reel (ours)</h3>
-                                <p class="strategy-summary">Parametric LoRA memory, trained end-to-end with error replay.</p>
                                 <video class="gallery-video" loop muted autoplay playsinline controls>
                                     <source src="./assets/videos/5b_t2v_ttt2reel_skiing_rabbit.mp4" type="video/mp4">
                                 </video>
