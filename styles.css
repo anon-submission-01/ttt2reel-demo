@@ -535,6 +535,23 @@ a {
     color: var(--accent);
 }
 
+.strategy-header-item {
+    text-align: center;
+}
+
+.strategy-header-item span {
+    display: block;
+}
+
+.strategy-header-item small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-weight: 400;
+    line-height: 1.35;
+}
+
 .comparison-row {
     gap: 12px;
     padding: 14px;
@@ -569,6 +586,10 @@ a {
 }
 
 .comparison-video-grid .demo-card h3 {
+    display: none;
+}
+
+.comparison-video-grid .strategy-summary {
     display: none;
 }
 
@@ -700,5 +721,11 @@ a {
     .comparison-video-grid .demo-card h3 {
         display: block;
         min-height: 0;
+    }
+
+    .comparison-video-grid .strategy-summary {
+        display: block;
+        padding-top: 8px;
+        border-bottom: 1px solid var(--line);
     }
 }
