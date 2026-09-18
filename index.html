@@ -300,9 +300,9 @@
                         <span>Chunk-wise AR</span>
                         <span>Chunk-wise AR + input/feature memory</span>
                         <span class="accent-heading">TTT2Reel (ours)</span>
-                        <small>Fails to extrapolate beyond the trained denoising horizon.</small>
+                        <small>Fails to extrapolate beyond the trained horizon.</small>
                         <small>No memory beyond the previous chunk's last frame; drifts quickly.</small>
-                        <small>A persistent anchor frame helps, but the memory stays capacity-bounded.</small>
+                        <small>The combination of apersistent anchor frame and short window attention helps, but the memory stays capacity-bounded.</small>
                         <small>Parametric LoRA memory, trained end-to-end with error replay.</small>
                     </div>
                     <section class="comparison-row">
