@@ -454,15 +454,15 @@
             <div class="metrics">
                 <div class="metric">
                     <strong>2.83</strong>
-                    <span>Best average rank over the six VBench-Long metrics for 60-second generation, ahead of every system compared</span>
+                    <span>Best average rank across the six VBench-Long metrics for 60-second generation</span>
                 </div>
                 <div class="metric">
-                    <strong>73–88%</strong>
-                    <span>VisionReward head-to-head win rate against one-pass, chunk-by-chunk, and anchored-memory baselines</span>
+                    <strong>63.9%</strong>
+                    <span>Highest VisionReward pass rate among all evaluated long-video generation models</span>
                 </div>
                 <div class="metric">
-                    <strong>O(N·f)</strong>
-                    <span>Linear generation cost in video length, vs. O(N²) for one-pass generation</span>
+                    <strong>60.5–89.0%</strong>
+                    <span>Head-to-head preference rate over FramePack, Helios-Base, SkyReels-V2, and LongLive-2.0</span>
                 </div>
             </div>
 
@@ -600,12 +600,12 @@
 
             <div class="result-grid">
                 <figure class="figure">
-                    <img src="./assets/images/placeholder.png" alt="VisionReward win rates (coming soon)">
-                    <figcaption>VisionReward win rates in head-to-head comparisons, judged by Gemini-3.7-Flash and the CogVLM2-based reward model. <em>(Coming soon.)</em></figcaption>
+                    <img src="./assets/images/visionreward-gemini-3.7-flash-fps4-bars.png" alt="VisionReward and instruction-following pass rates for seven long-video generation models">
+                    <figcaption>VisionReward and instruction-following pass rates for each model. All results use Gemini-3.7-Flash as the judge and process videos at 4.0 FPS.</figcaption>
                 </figure>
                 <figure class="figure">
-                    <img src="./assets/images/placeholder.png" alt="Qualitative comparison frames (coming soon)">
-                    <figcaption>Frames sampled at fixed intervals from one-minute rollouts of TTT2Reel and the baselines. <em>(Coming soon.)</em></figcaption>
+                    <img src="./assets/images/visionreward-gemini-3.7-flash-fps4-h2h.png" alt="Head-to-head preference rates of TTT2Reel against four long-video generation baselines">
+                    <figcaption>Head-to-head preference rates of TTT2Reel against four baselines. All results use Gemini-3.7-Flash as the judge and process videos at 4.0 FPS.</figcaption>
                 </figure>
             </div>
         </section>
