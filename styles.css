@@ -652,9 +652,10 @@ a {
 .gallery-video {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    /* Match the native 832x480 frame so no letterbox strip can appear. */
+    aspect-ratio: 832 / 480;
     height: auto;
-    background: #14110d;
+    background: #ffffff;
     object-fit: cover;
 }
 
